@@ -18,6 +18,19 @@ jobs:
     # O tipo de máquina virtual para rodar o job
     runs-on: ubuntu-latest
 
+    env:
+      # 1. Referência ao Segredo (Chave Confidencial)
+      # O valor será injetado do Segredo que você criou no GitHub
+      MONGO_URI: ${{ secrets.MONGO_URI }}
+      MONGO_DB: ${{ secrets.MONGO_DB }}
+      WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
+      WANDB_MODEL_URL: ${{ secrets.WANDB_MODEL_URL }}
+      WANDB_MODEL_URL: ${{ secrets.WANDB_MODEL_URL }}
+      
+      # 2. Variáveis Não Confidenciais
+      # Essas são definidas diretamente no arquivo .yml
+      ENV: 'dev'
+
     # Passos sequenciais que o job executará
     steps:
       # 1. Faz o checkout do código do repositório para a máquina virtual
