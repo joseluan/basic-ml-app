@@ -45,12 +45,10 @@ app.add_middleware(
 )
 
 # Initialize database connection
-try:
-    collection = get_mongo_collection(f"{ENV.upper()}_intent_logs")
-    logger.info("Database connection established")
-except Exception as e:
-    logger.error(f"Failed to connect to database: {str(e)}")
-    logger.error(traceback.format_exc())
+# So inicializa caso o collection for iniciado corretamente
+collection = get_mongo_collection(f"{ENV.upper()}_intent_logs")
+logger.info("Database connection established")
+
 
 
 async def conditional_auth():
