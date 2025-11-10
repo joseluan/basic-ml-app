@@ -25,7 +25,6 @@ jobs:
       MONGO_DB: ${{ secrets.MONGO_DB }}
       WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
       WANDB_MODEL_URL: ${{ secrets.WANDB_MODEL_URL }}
-      WANDB_MODEL_URL: ${{ secrets.WANDB_MODEL_URL }}
       
       # 2. Variáveis Não Confidenciais
       # Essas são definidas diretamente no arquivo .yml
