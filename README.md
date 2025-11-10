@@ -1,4 +1,5 @@
 # basic-ml-app
+<<<<<<< HEAD
 
 Este repositório foi criado com propósitos educacionais para o curso IMD3005 - MLOPS, demonstrando como transformar um modelo treinado em um serviço web a ser implantado em produção. Atenção, pode conter pequenos bugs que precisam ser consertados. Para reportar bugs ou solicitar apoio, entre em contato por e-mail `adelson.araujo@imd.ufrn.br`.
 
@@ -119,3 +120,6 @@ docker stop intent-clf-container
 docker rm -f intent-clf-container
 ```
 
+=======
+Pratica de MLOPS pra uma diciplina do IMD, 
+>>>>>>> 76583c5204fa516a7ea7ce9cf0147aee2ca5b2da
