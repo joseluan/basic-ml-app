@@ -10,8 +10,13 @@ MONGO_DB = os.getenv("MONGO_DB")
 def get_mongo_collection(collection_name: str):
     client = MongoClient(MONGO_URI)
     db = client[MONGO_DB]
+    # TODO: Retirar esse if depois, para nao ficar verificando sempre
+    if collection_name not in db.list_collection_names():
+        db.create_collection(collection_name)
+    
     return db[collection_name]
 
 
-# Wrap db functions in this module to separate the database logic from the business logic
-    
+if __name__ == "__main__":
+    ENV = os.getenv("ENV", "prod").lower()
+    collection = get_mongo_collection(f"{ENV.upper()}_intent_logs")
